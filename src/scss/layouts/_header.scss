@@ -1,0 +1,162 @@
+header {
+  background-color: #66acff;
+  height: 100vh;
+  width: 100vw;
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    transform-style: preserve-3d;
+    border: 2px solid white;
+    ul {
+      @include flex_center;
+      margin-right: 56px;
+      margin-top: 48px;
+    }
+    a {
+      width: 80px;
+      height: 80px;
+      background: white;
+      border-radius: 50%;
+      @include flex_center;
+      margin-right: 24px;
+      color: $primary-color;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      &:hover {
+        transform: scale(1.2);
+        box-shadow: black;
+      }
+      .hobbies-link {
+        color: $secondary-color;
+      }
+      .contact-link {
+        color: $tertiary-color;
+      }
+    }
+  }
+}
+
+// CUBE
+
+.wrap {
+  perspective: 1000px;
+  perspective-origin: 50% 10%;
+  position: relative;
+  border: 2px solid red;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.cube {
+  transform: preserve-3d;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: white;
+}
+
+.cube:hover {
+  cursor: pointer;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.cube img {
+  position: absolute;
+  opacity: 0.9999;
+}
+
+.cube {
+  img:nth-child(1) {
+    transform: rotateY(0deg) translateZ(100px);
+  }
+  img:nth-child(2) {
+    transform: rotateY(90deg) translateZ(100px);
+  }
+  img:nth-child(3) {
+    transform: rotateY(180deg) translateZ(100px);
+  }
+  img:nth-child(4) {
+    transform: rotateY(-90deg) translateZ(100px);
+  }
+  img:nth-child(5) {
+    transform: rotateX(90deg) translateZ(100px);
+  }
+  img:nth-child(6) {
+    transform: rotateX(-90deg) translateZ(100px);
+  }
+}
+
+@keyframes loop {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.cube {
+  animation: loop 5s linear infinite;
+}
+
+/* ARROWS  */
+
+.arrows {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+.arrows svg {
+  position: absolute;
+}
+.arrows svg:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.up {
+  top: 0;
+  left: 50px;
+}
+
+.down {
+  bottom: 0;
+  left: 50px;
+}
+.left {
+  top: 50px;
+  left: 0;
+}
+.right {
+  top: 50px;
+  right: 0;
+}
+
+/* VISIT AND CODE */
+
+.visit:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.code:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
