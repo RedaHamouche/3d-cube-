@@ -1,5 +1,5 @@
 header {
-  background-color: #66acff;
+  background-image: linear-gradient(to right bottom, #d5a4e2, #a4a0f8, #66acff);
   height: 100vh;
   width: 100vw;
   nav {
@@ -44,13 +44,14 @@ header {
 .wrap {
   perspective: 1000px;
   perspective-origin: 50% 10%;
-  position: relative;
   border: 2px solid red;
-  width: 100%;
+  width: 80vw;
+  margin: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
   margin-top: 48px;
+  padding-right: 20px;
+  overflow: hidden;
 }
 
 .cube {
@@ -65,7 +66,6 @@ header {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background: white;
 }
 
 .cube:hover {
@@ -122,6 +122,8 @@ img {
   width: 150px;
   height: 150px;
   position: relative;
+  border: 2px solid white;
+  margin-right: 200px;
 }
 
 .arrows svg {
