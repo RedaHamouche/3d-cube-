@@ -4,7 +4,6 @@ const arrowUp = document.querySelector(".up");
 const arrowDown = document.querySelector(".down");
 const arrowLeft = document.querySelector(".left");
 const arrowRight = document.querySelector(".right");
-const explode = document.querySelector(".explode");
 
 const imgs = document.querySelectorAll(".cube img");
 console.log(imgs);
@@ -22,8 +21,7 @@ addEventListener("click", () => {
 arrowUp.addEventListener("click", () => {
   x += 90;
   y = 0;
-  if (x % 180 == 0) {
-  }
+
   cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg)`;
 });
 arrowDown.addEventListener("click", () => {
@@ -41,10 +39,4 @@ arrowRight.addEventListener("click", () => {
   y -= 90;
   x = 0;
   cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg)`;
-});
-
-explode.addEventListener("click", () => {
-  for (let i = 0; i < imgs.length; i++) {
-    imgs[i].style.transform += "translateY(1px)";
-  }
 });

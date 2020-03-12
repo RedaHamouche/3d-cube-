@@ -8,3 +8,10 @@
   justify-content: space-around;
   align-items: center;
 }
+
+@mixin font_primary {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+}

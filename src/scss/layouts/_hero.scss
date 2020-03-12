@@ -6,7 +6,6 @@ header {
     display: flex;
     justify-content: flex-end;
     transform-style: preserve-3d;
-    border: 2px solid white;
     ul {
       @include flex_center;
       margin-right: 56px;
@@ -44,21 +43,20 @@ header {
 .wrap {
   perspective: 1000px;
   perspective-origin: 50% 10%;
-  border: 2px solid red;
+
   width: 80vw;
   margin: auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 48px;
   padding-right: 20px;
-  overflow: hidden;
 }
 
 .cube {
   transform: preserve-3d;
   width: 300px;
   height: 300px;
-  margin: auto;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.7s ease-in-out;
@@ -72,34 +70,43 @@ header {
   cursor: pointer;
 }
 
-img {
-  width: 200px;
-  height: 200px;
-}
-
-.cube img {
+.cube div {
   position: absolute;
   opacity: 0.9999;
 }
 
 .cube {
-  img:nth-child(1) {
+  div {
+    width: 200px;
+    height: 200px;
+    background: #66acff;
+    @include flex_center;
+    @include font_primary;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+  }
+  div:nth-child(1) {
     transform: rotateY(0deg) translateZ(100px);
+    background-color: #d5a4e2;
   }
-  img:nth-child(2) {
+  div:nth-child(2) {
     transform: rotateY(90deg) translateZ(100px);
+    background-color: $tertiary-color;
   }
-  img:nth-child(3) {
+  div:nth-child(3) {
     transform: rotateY(180deg) translateZ(100px);
+    background-color: #d5a4e2;
   }
-  img:nth-child(4) {
+  div:nth-child(4) {
     transform: rotateY(-90deg) translateZ(100px);
+    background-color: $tertiary-color;
   }
-  img:nth-child(5) {
+  div:nth-child(5) {
     transform: rotateX(90deg) translateZ(100px);
   }
-  img:nth-child(6) {
-    transform: rotateX(-90deg) translateZ(100px);
+  div:nth-child(6) {
+    transform: rotateX(-90deg) translateZ(150px);
   }
 }
 
@@ -121,35 +128,31 @@ img {
 .arrows {
   width: 150px;
   height: 150px;
-  position: relative;
-  border: 2px solid white;
-  margin-right: 200px;
+  display: grid;
+  grid-template-areas:
+    ". arrow_up ."
+    "arrow_left . arrow_right"
+    ". arrow_down .";
+  margin-left: 30px;
 }
 
-.arrows svg {
-  position: absolute;
-}
 .arrows svg:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
 
 .up {
-  top: 0;
-  left: 50px;
+  grid-area: arrow_up;
 }
 
 .down {
-  bottom: 0;
-  left: 50px;
+  grid-area: arrow_down;
 }
 .left {
-  top: 50px;
-  left: 0;
+  grid-area: arrow_left;
 }
 .right {
-  top: 50px;
-  right: 0;
+  grid-area: arrow_right;
 }
 
 /* VISIT AND CODE */
