@@ -59,7 +59,7 @@ header {
   height: 300px;
 
   transform-style: preserve-3d;
-  transition: transform 0.7s ease-in-out;
+  transition: transform 0.7s ease-out;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,17 +110,30 @@ header {
   }
 }
 
-@keyframes loop {
-  from {
+@keyframes loopcube {
+  0% {
     transform: rotateX(0deg) rotateY(0deg);
   }
-  to {
-    transform: rotateX(360deg) rotateY(360deg);
+  15% {
+    transform: rotateX(90deg) rotateY(0deg);
+  }
+  30% {
+    transform: rotateX(0deg) rotateY(90deg);
+  }
+  45% {
+    transform: rotateX(0deg) rotateY(180deg);
+  }
+  60% {
+    transform: rotateX(0deg) rotateY(-90deg);
+  }
+
+  100% {
+    transform: rotateX(-90deg) rotateY(0deg);
   }
 }
 
 .cube {
-  animation: loop 5s linear infinite;
+  animation: loopcube 10s forwards infinite;
 }
 
 /* ARROWS  */
@@ -208,7 +221,7 @@ header {
   }
 }
 
-@keyframes loop {
+@keyframes loopsocial {
   from {
     transform: rotateX(0deg) rotateY(0deg);
   }
@@ -219,7 +232,7 @@ header {
 
 .socials {
   nav {
-    animation: loop 5s 1s forwards infinite;
+    animation: loopsocial 5s 1s forwards infinite;
   }
 }
 nav:hover {
